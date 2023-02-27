@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <script>
+      // Example of an object literal, with 4 members (2 properties and 2 methods).
+    const person = {
+      // The name property is in itself an object.
+      name: {
+        first: "Bob",
+        last: "Smith",
+      },
+      age: 32,
+      bio() {
+        console.log(`${this.name.first} ${this.name.last} is ${this.age} years old.`);
+      },
+      introduceSelf() {
+        console.log(`Hi! I'm ${this.name.first}.`);
+      },
+    };
+
+    const myDataName = "height";
+    const myDataValue = "1.75m";
+    person[myDataName] = myDataValue;
+    // Example console input:
+    //person.height;
+
+    // Example of when need to use brackets instead of dot notation.
+    const man = {
+        name: ["Bob", "Smith"],
+        age: 40,
+      };
+
+      function logProperty(propertyName) {
+        console.log(man[propertyName]);
+      }
+      // Example console input:
+      //logProperty("name");
+
+      // Example of a function creating a new object dynamically (unlike an object literal). It's a bit long-winded though.
+      function createPerson(name) {
+          const obj = {};
+          obj.name = name;
+          obj.introduceSelf = function () {
+            console.log(`Hi! I'm ${this.name}.`);
+          };
+          return obj;
+        }
+
+        // A more efficient way to create a new object dynamically is a constructor.
+        function Person(name) {
+            this.name = name;
+            this.introduceSelf = function () {
+              console.log(`Hi! I'm ${this.name}.`);
+            };
+          }
+
+        // Calling the above constructor.
+        const guest = new Person("Salva");
+        guest.name;
+        guest.introduceSelf();
+
+
+    </script>
+  </body>
+
+</html>
