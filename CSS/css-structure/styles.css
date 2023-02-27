@@ -1,0 +1,45 @@
+/* Create your test CSS here */
+
+.special {
+  color: red;
+  padding: 20px;
+  width: 10%;
+  transform: rotate(0.9turn);
+}
+
+/* Exact width */
+@media (width: 360px) {
+  div {
+    color: red;
+  }
+}
+
+/* Minimum width ie yellow background if the browswer window is bigger than 35rem */
+@media (min-width: 35rem) {
+  div {
+    background: yellow;
+  }
+}
+
+/* Maximum width ie blue border if the browswer window is smaller than 50rem*/
+@media (max-width: 50rem) {
+  div {
+    border: 2px solid blue;
+  }
+}
+
+p {
+  color: blue;
+  background-color: rgb(200, 241, 217);
+  border: solid;
+  border-color: black;
+  width: calc(40% - 30px);
+}
+
+h1 {
+  size: 32;
+}
+
+* {
+  font: italic;
+}
