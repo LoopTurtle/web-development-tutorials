@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bouncing Balls</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script>
+		// Get the canvas element from the DOM
+		var canvas = document.getElementById("canvas");
+
+		// Set the canvas context to 2d
+		var ctx = canvas.getContext("2d");
+
+		// Set the ball's properties
+		var x = canvas.width / 2;
+		var y = canvas.height / 2;
+		var dx = 2;
+		var dy = -2;
+		var radius = 10;
+
+		// Draw the ball
+		function drawBall() {
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, Math.PI * 2);
+			ctx.fillStyle = "blue";
+			ctx.fill();
+			ctx.closePath();
+		}
+
+		// Move the ball
+		function moveBall() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			drawBall();
+			if (x + dx > canvas.width - radius || x + dx < radius) {
+				dx = -dx;
+			}
+			if (y + dy > canvas.height - radius || y + dy < radius) {
+				dy = -dy;
+			}
+			x += dx;
+			y += dy;
+		}
+
+		// Set the animation interval
+		setInterval(moveBall, 10);
+	</script>
+</body>
+</html>
