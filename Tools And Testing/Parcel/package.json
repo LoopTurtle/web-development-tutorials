@@ -1,0 +1,15 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "A simple npm package to learn about using npm as a package manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DL",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}
