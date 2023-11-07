@@ -4,7 +4,9 @@
   "description": "A simple npm package to learn about using npm as a package manager.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel serve index.html",
+    "build": "parcel build src/index.html"
   },
   "author": "DL",
   "license": "ISC",
